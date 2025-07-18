@@ -16,8 +16,12 @@ namespace PointsBet_Backend_Online_Code_Test_ConsoleApp
                 return;
             }
 
-            // Trim whitespaces around each item
-            string[] items = args[0].Split(',').Select(item => item.Trim()).ToArray();
+            // Trim whitespaces around each item and remove empty items
+            string[] items = args[0]
+                .Split(',')
+                .Select(item => item.Trim())           // Trim spaces around each item
+                .Where(item => !string.IsNullOrEmpty(item))  // Remove empty items
+                .ToArray();
             string quote = args[1];
 
             // Quote can only be one character
