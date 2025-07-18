@@ -1,0 +1,22 @@
+# Build output folders
+bin/
+obj/
+
+# Visual Studio workspace files
+.vs/
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+
+# OS-generated files
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Others
+*.log
