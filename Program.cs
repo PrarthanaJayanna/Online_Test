@@ -1,12 +1,19 @@
 ﻿using System;
+using PointsBet_Backend_Online_Code_Test;  // Reference to class library namespace
 
-namespace BackendTestCode
+namespace PointsBet_Backend_Online_Code_Test_ConsoleApp
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string[] items = { "table", "pen", "paper", "book" };
+            string quote = "'";
+
+            string result = StringFormatter.ToCommaSepatatedList(items, quote);
+
+            Console.WriteLine("Formatted list:");
+            Console.WriteLine(result);
         }
     }
 }
