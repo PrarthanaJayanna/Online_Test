@@ -2,10 +2,10 @@
 
 namespace PointsBet_Backend_Online_Code_Test
 {
-    public class StringFormatter
+    public static class StringFormatter // static class with static method
     {
-
-        //Code to improve
+        // Returns a comma-separated string, wrapping each item in the given quote.
+        // Example: Input: ["table", "pen"] with quote ''' => Output: 'table', 'pen'
         public static string ToCommaSeparatedList(string[] items, string quote)
         {
             StringBuilder qry = new StringBuilder(string.Format("{0}{1}{0}", quote, items[0]));
