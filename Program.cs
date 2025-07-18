@@ -10,7 +10,7 @@ namespace PointsBet_Backend_Online_Code_Test_ConsoleApp
             string[] items = { "table", "pen", "paper", "book" };
             string quote = "'";
 
-            string result = StringFormatter.ToCommaSepatatedList(items, quote);
+            string result = StringFormatter.ToCommaSeparatedList(items, quote);
 
             Console.WriteLine("Formatted list:");
             Console.WriteLine(result);
