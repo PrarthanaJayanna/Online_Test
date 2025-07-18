@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+
 using PointsBet_Backend_Online_Code_Test;  // Reference to class library namespace
 
 namespace PointsBet_Backend_Online_Code_Test_ConsoleApp
@@ -14,8 +16,16 @@ namespace PointsBet_Backend_Online_Code_Test_ConsoleApp
                 return;
             }
 
-            string[] items = args[0].Split(',');
+            // Trim whitespaces around each item
+            string[] items = args[0].Split(',').Select(item => item.Trim()).ToArray();
             string quote = args[1];
+
+            // Quote can only be one character
+            if (string.IsNullOrEmpty(quote) || quote.Length != 1)
+            {
+                Console.WriteLine("Quote character must be a single character.");
+                return;
+            }
 
             string result = StringFormatter.ToCommaSeparatedList(items, quote);
 
