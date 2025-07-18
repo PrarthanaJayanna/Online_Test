@@ -7,7 +7,13 @@ namespace PointsBet_Backend_Online_Code_Test_ConsoleApp
     {
         static void Main(string[] args)
         {
-            string[] items = { "table", "pen", "paper", "book" };
+            if (args.Length == 0)
+            {
+                Console.WriteLine("Please provide a comma-separated list of items as the first argument.");
+                return;
+            }
+
+            string[] items = args[0].Split(',');
             string quote = "'";
 
             string result = StringFormatter.ToCommaSeparatedList(items, quote);
