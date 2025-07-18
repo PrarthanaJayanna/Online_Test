@@ -7,14 +7,15 @@ namespace PointsBet_Backend_Online_Code_Test_ConsoleApp
     {
         static void Main(string[] args)
         {
-            if (args.Length == 0)
+            if (args.Length < 2)
             {
-                Console.WriteLine("Please provide a comma-separated list of items as the first argument.");
+                Console.WriteLine("Usage: dotnet run <comma-separated-items> <quote-character>");
+                Console.WriteLine("Example: dotnet run \"table,pen,book\" \"'\"");
                 return;
             }
 
             string[] items = args[0].Split(',');
-            string quote = "'";
+            string quote = args[1];
 
             string result = StringFormatter.ToCommaSeparatedList(items, quote);
 
